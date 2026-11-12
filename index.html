@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0d">
+  <title>Poetry Hub — شاعری کا مرکز</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <img src="assets/logo-placeholder.svg" alt="Poetry Hub logo">
+      <span><strong>POETRY HUB</strong><small>شاعری کا مرکز</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="nav">
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <button class="outline-btn" id="adminOpen">Admin Login</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">WORDS THAT TOUCH THE HEART</p>
+        <h1>Every feeling has<br><em>a poetry.</em></h1>
+        <p class="hero-sub">A beautiful collection of Urdu poetry images — thoughtful words, timeless feelings.</p>
+        <a class="gold-btn" href="#gallery">Explore Poetry <span>↗</span></a>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-seal"><span>POETRY</span><b>✒</b><span>HUB</span></div>
+        <p>شاعری کا مرکز</p>
+      </div>
+    </section>
+
+    <section class="categories" aria-label="Poetry categories">
+      <button class="category active" data-category="all">All Poetry</button>
+      <button class="category" data-category="sad">Sad Poetry</button>
+      <button class="category" data-category="love">Love Poetry</button>
+      <button class="category" data-category="islamic">Islamic Poetry</button>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2>Poetry Gallery</h2></div>
+        <p id="galleryStatus">A little poetry for every mood.</p>
+      </div>
+      <div class="gallery" id="galleryGrid">
+        <div class="empty-state"><span>✧</span><h3>Your poetry gallery is ready</h3><p>Images added by the admin will appear here.</p></div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <p class="eyebrow">ABOUT POETRY HUB</p>
+      <h2>Where words find a home.</h2>
+      <p>Poetry Hub brings together sad, love, and Islamic poetry in one elegant place. Browse, enjoy, and share the words that speak to you.</p>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> Poetry Hub</span><span>Made for the love of poetry · شاعری کا مرکز</span></footer>
+
+  <div class="modal hidden" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+    <div class="modal-card">
+      <button class="close" id="closeModal" aria-label="Close">×</button>
+      <p class="eyebrow">PRIVATE AREA</p><h2 id="adminTitle">Admin Login</h2>
+      <p class="muted">Only the authorized admin account can manage images.</p>
+      <form id="loginForm">
+        <label>Email<input type="email" id="email" autocomplete="username" required></label>
+        <label>Password<input type="password" id="password" autocomplete="current-password" required></label>
+        <button class="gold-btn full" type="submit">Sign in</button>
+      </form>
+      <p class="notice" id="loginMessage" aria-live="polite"></p>
+      <div class="admin-panel hidden" id="adminPanel">
+        <hr>
+        <h3>Upload a poetry image</h3>
+        <label>Category
+          <select id="uploadCategory">
+            <option value="sad">Sad Poetry</option>
+            <option value="love">Love Poetry</option>
+            <option value="islamic">Islamic Poetry</option>
+          </select>
+        </label>
+        <label>Choose image<input type="file" id="imageFile" accept="image/jpeg,image/png,image/webp,image/gif"></label>
+        <p class="muted tiny">Maximum file size: 5 MB. JPG, PNG, WEBP, GIF.</p>
+        <button class="gold-btn full" id="uploadBtn" type="button">Upload Image</button>
+        <p class="notice" id="uploadMessage" aria-live="polite"></p>
+        <button class="outline-btn full" id="logoutBtn" type="button">Sign out</button>
+      </div>
+    </div>
+  </div>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
