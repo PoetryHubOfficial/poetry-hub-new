@@ -19,7 +19,10 @@
   document.getElementById("menuBtn").addEventListener("click", () => document.getElementById("nav").classList.toggle("open"));
   document.querySelectorAll(".category").forEach(btn => btn.addEventListener("click", () => {
     document.querySelectorAll(".category").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active"); activeCategory = btn.dataset.category; renderGallery();
+   btn.classList.add("active");
+activeCategory = btn.dataset.category;
+document.getElementById("gallery").classList.remove("hidden");
+renderGallery();
   }));
 
   function categoryFromPath(path) { return path.split("/")[0] || "sad"; }
