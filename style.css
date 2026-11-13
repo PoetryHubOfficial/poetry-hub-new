@@ -98,3 +98,20 @@ main,
 .gallery-section {
   background-color: transparent;
 }
+/* AK KHAN Brand Styling */
+.brand img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.brand strong {
+  font-size: 25px;
+  color: #c9a45f;
+  letter-spacing: 2px;
+}
+
+.brand small {
+  font-size: 14px;
+  color: #e8d5ad;
+}
