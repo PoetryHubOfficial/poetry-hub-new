@@ -61,3 +61,20 @@
   border-radius: 18px;
   object-fit: cover;
 }
+/* Poetry Hub - Elegant Full Website Background */
+
+body {
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(201,164,95,0.13), transparent 35%),
+    radial-gradient(ellipse at 85% 75%, rgba(201,164,95,0.10), transparent 40%),
+    linear-gradient(135deg, #080808, #17130e, #090909);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f5ead5;
+}
+
+main,
+.gallery-section {
+  background: transparent;
+}
