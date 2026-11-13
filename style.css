@@ -46,3 +46,18 @@
     font-size: 18px;
   }
 }
+.new-hero {
+  width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-banner {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+}
