@@ -9,7 +9,7 @@
   const loginForm = document.getElementById("loginForm");
   const loginMessage = document.getElementById("loginMessage");
   const adminPanel = document.getElementById("adminPanel");
-  let activeCategory = "all";
+  let activeCategory = "";
   let allImages = [];
   let isAdmin = false;
 
@@ -24,7 +24,17 @@
 
   function categoryFromPath(path) { return path.split("/")[0] || "sad"; }
   function renderGallery() {
-    const visible = allImages.filter(x => activeCategory === "all" || x.category === activeCategory);
+  function renderGallery() {
+  if (!activeCategory) {
+    grid.innerHTML = "";
+    status.textContent = "Choose a poetry category to begin.";
+    return;
+  }
+
+  const visible = allImages.filter(x =>
+    activeCategory === "all" || x.category === activeCategory
+  );
+    }
     if (!visible.length) {
       grid.innerHTML = '<div class="empty-state"><span>✧</span><h3>No images here yet</h3><p>New poetry images will appear in this collection.</p></div>';
       return;
