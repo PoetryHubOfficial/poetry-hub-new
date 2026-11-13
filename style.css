@@ -78,3 +78,23 @@ main,
 .gallery-section {
   background: transparent;
 }
+/* Poetry Hub Full Website Background Image */
+
+body {
+  background-color: #080808;
+  background-image:
+    linear-gradient(
+      rgba(5, 5, 5, 0.48),
+      rgba(5, 5, 5, 0.48)
+    ),
+    url("poetry-background.png.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+main,
+.gallery-section {
+  background-color: transparent;
+}
